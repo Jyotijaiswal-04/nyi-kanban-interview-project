@@ -18,8 +18,6 @@ export default function TaskModal({ task, onClose, onTaskUpdated }) {
     setLoading(true);
     try {
       const res = await api.put(`/tasks/${task._id}`, form);
-      console.log(res.data);
-
       onTaskUpdated(res.data);
       onClose();
     } catch (err) {

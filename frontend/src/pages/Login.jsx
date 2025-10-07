@@ -12,8 +12,6 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await api.post("/auth/login", form);
-      console.log("Response", res.data);
-
       setUser(res.data);
       navigate("/");
     } catch (err) {
